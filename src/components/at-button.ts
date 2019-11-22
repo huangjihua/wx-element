@@ -1,4 +1,5 @@
 import { LitElement, html, property } from "lit-element";
+import "./at-loading";
 
 const btn_style = require("./scss/at-button.scss");
 
@@ -35,6 +36,11 @@ export class AtButton extends LitElement {
   }
   render() {
     let result;
+    let _loading = this.loading
+      ? html`
+          <at-loading></at-loading>
+        `
+      : "";
     if (this.href) {
       result = html`
         <a
@@ -48,6 +54,7 @@ export class AtButton extends LitElement {
       `;
     } else {
       result = html`
+        ${_loading}
         <button class="btn" name="btn" disabled="${this.disabled}"></button>
       `;
     }
