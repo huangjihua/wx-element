@@ -1,0 +1,34 @@
+{
+  "name": "wc-demo",
+  "version": "1.0.0",
+  "description": "developer web compontent ",
+  "main": "index.js",
+  "author": "hank",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.7.0",
+    "@open-wc/building-webpack": "^2.7.4",
+    "css-loader": "^3.2.0",
+    "es-dev-server": "^1.23.1",
+    "html-webpack-harddisk-plugin": "^1.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "lit-element": "^2.2.1",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^8.0.0",
+    "style-loader": "^1.0.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.2",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "scripts": {
+    "dev": "webpack-dev-server --config webpack.dev.config.js",
+    "build": "webpack --mode production --config webpack.pro.config.js",
+    "start:build": "es-dev-server --config --app-index index.html --open"
+  },
+  "dependencies": {
+    "extract-loader": "^3.1.0",
+    "lit-scss-loader": "^1.0.0"
+  }
+}

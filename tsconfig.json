@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    // "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "es6", // es5有点问题
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node"
+  },
+  "lib": ["es2015", "es2016", "esnext"],
+  "exclude": ["node_modules"]
+}
