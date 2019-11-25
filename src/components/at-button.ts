@@ -41,6 +41,13 @@ export class AtButton extends LitElement {
           <at-loading></at-loading>
         `
       : "";
+    let button = this.disabled
+      ? html`
+          <button class="btn" name="btn" disabled="${this.disabled}"></button>
+        `
+      : html`
+          <button class="btn" name="btn"></button>
+        `;
     if (this.href) {
       result = html`
         <a
@@ -54,8 +61,7 @@ export class AtButton extends LitElement {
       `;
     } else {
       result = html`
-        ${_loading}
-        <button class="btn" name="btn" disabled="${this.disabled}"></button>
+        ${_loading} ${button}
       `;
     }
     result = html`
@@ -67,6 +73,30 @@ export class AtButton extends LitElement {
     `;
     return result;
   }
+
+  connectedCallback() {
+    super.connectedCallback();
+    this.onmousedown = e => {
+      const { left, top } = this.getBoundingClientRect();
+      if (!this.disabled) {
+        //按钮点击动态波纹效果位置
+        this.style.setProperty("--x", `${e.clientX - left}px`);
+        this.style.setProperty("--y", `${e.clientY - top}px`);
+      }
+    };
+  }
+  // attributeChangedCallback(name, oldValue, newValue) {
+  //   if (name === "disabled" && this) {
+  //     if (!this.getAttribute("disabled") && newValue !== (null || "")) {
+  //       this.setAttribute(newValue, newValue);
+  //       if (this.href) {
+  //         this.removeAttribute("href");
+  //       }
+  //     } else {
+  //       this.removeAttribute(newValue);
+  //     }
+  //   }
+  // }
 }
 // 注意这里需要判断下，不然浏览器会报：Failed to execute 'define' on 'CustomElementRegistry': this name has already been used with this registry
 // 所以不能用@customElement("at-button")写法 ，目前还没找到解决方案
