@@ -1,5 +1,5 @@
 import { LitElement, property, html } from "lit-element";
-const style = require("./scss/at-loading.scss");
+const style = require("./scss/wx-loading.scss");
 
 export class AtLoading extends LitElement {
   @property({ type: Number }) size = 0;

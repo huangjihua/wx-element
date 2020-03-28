@@ -1,1 +1,1 @@
-import "./components/at-button";
+import "./components/wx-button";

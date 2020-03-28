@@ -1,7 +1,7 @@
 import { LitElement, html, property } from "lit-element";
-import "./at-loading";
+import "./wx-loading";
 
-const btn_style = require("./scss/at-button.scss");
+const btn_style = require("./scss/wx-button.scss");
 
 // @customElement("at-button")
 export class AtButton extends LitElement {
