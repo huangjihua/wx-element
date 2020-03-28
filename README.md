@@ -1,7 +1,7 @@
 # wx-element
 
 `wx-element`基于原生`web Components`规范开发的跨框架 UI 组件库。[查看文档]()
-[github 项目地址](https://github.com/huangjihua/web-components)
+[github 项目地址](https://github.com/huangjihua/wx-element)
 
 ## 更新
 
