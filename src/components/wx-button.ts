@@ -38,7 +38,7 @@ export class AtButton extends LitElement {
     let result;
     let _loading = this.loading
       ? html`
-          <at-loading></at-loading>
+          <wx-loading></wx-loading>
         `
       : "";
     let button = this.disabled
@@ -100,6 +100,6 @@ export class AtButton extends LitElement {
 }
 // 注意这里需要判断下，不然浏览器会报：Failed to execute 'define' on 'CustomElementRegistry': this name has already been used with this registry
 // 所以不能用@customElement("at-button")写法 ，目前还没找到解决方案
-if (!customElements.get("at-button")) {
-  customElements.define("at-button", AtButton);
+if (!customElements.get("wx-button")) {
+  customElements.define("wx-button", AtButton);
 }

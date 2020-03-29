@@ -25,7 +25,8 @@
   "scripts": {
     "dev": "webpack-dev-server --config webpack.dev.config.js",
     "build": "webpack --mode production --config webpack.pro.config.js",
-    "start:build": "es-dev-server --config --app-index index.html --open"
+    "start:build": "es-dev-server --config --app-index index.html --open",
+    "docs": "docsify serve ./src/docs"
   },
   "dependencies": {
     "extract-loader": "^3.1.0",

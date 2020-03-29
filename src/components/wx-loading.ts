@@ -37,6 +37,6 @@ export class AtLoading extends LitElement {
   }
 }
 
-if (!customElements.get("at-loading")) {
-  customElements.define("at-loading", AtLoading);
+if (!customElements.get("wx-loading")) {
+  customElements.define("wx-loading", AtLoading);
 }

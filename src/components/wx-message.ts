@@ -31,7 +31,7 @@ export class AtMessage extends LitElement {
   }
 }
 // 注意这里需要判断下，不然浏览器会报：Failed to execute 'define' on 'CustomElementRegistry': this name has already been used with this registry
-// 所以不能用@customElement("at-button")写法 ，目前还没找到解决方案
-if (!customElements.get("at-message")) {
-  customElements.define("at-message", AtMessage);
+// 所以不能用@customElement("wx-button")写法 ，目前还没找到解决方案
+if (!customElements.get("wx-message")) {
+  customElements.define("wx-message", AtMessage);
 }

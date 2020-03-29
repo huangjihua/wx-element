@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>wx-element - developer web compontent </title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="developer web compontent ">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
+  <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+</head>
+
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      loadSidebar: true,
+      loadSidebar: '_sidebar.md',
+      name: 'wx-element',
+      repo: 'https://github.com/huangjihua/wx-element',
+      auto2top: true,
+    }
+  </script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify-copy-code"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
+  <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script>
+    const gitalk = new Gitalk({
+      clientID: 'de98aa2598238c9642f5',
+      clientSecret: '4186493e791efbf12401f7321969f2ed15f11aac',
+      repo: 'docsify-starter',
+      owner: 'swimly',
+      admin: ['swimly'],
+      // facebook-like distraction free mode
+      distractionFreeMode: true
+    })
+  </script>
+  <script type="text/javascript" src="./bundle.js"></script>
+  <script type="module" src="./bundle.js"></script>
+  <!-- <script type="module" defer>
+    import '../index.ts';
+  </script> -->
+</body>
+
+</html>
