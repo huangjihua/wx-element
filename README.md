@@ -1,6 +1,8 @@
 # wx-element
 
-`wx-element`基于原生`web Components`规范开发的跨框架 UI 组件库。[查看文档](https://github.com/huangjihua/wx-element/src/docs)
+`wx-element`基于`LitElement`基类组件开发的原生跨框架的自定义 UI 组件库。[查看文档](https://github.com/huangjihua/wx-element/src/docs)
+
+[`LitElement`](https://lit-element.polymer-project.org/)遵循 Web 组件标准，兼容性良好，可在所有主流浏览器（Chrome，Firefox，IE，Edge，Safari 和 Opera）中使用.
 
 [github 项目地址](https://github.com/huangjihua/wx-element)
 
