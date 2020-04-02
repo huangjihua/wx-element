@@ -153,12 +153,12 @@ at-loading {
   transition: 0s;
 }
 
-xy-icon {
+wx-icon {
   margin-right: 5px;
   transition: none;
 }
 
-:host(:empty) xy-icon {
+:host(:empty) wx-icon {
   margin: auto;
 }
 
@@ -171,7 +171,7 @@ xy-icon {
   padding: calc(8px + 1px);
 }
 
-::slotted(xy-icon) {
+::slotted(wx-icon) {
   transition: none;
 }
 
