@@ -25,13 +25,9 @@ export class WxButton extends LitElement {
   //是否禁用
   @property({ type: Boolean }) disabled = false;
   // 状态切换
-  @property({ type: Boolean }) toggle = true;
+  @property({ type: Boolean }) toggle = this.hasAttribute("toggle");
 
   @property({ type: Boolean }) checked = false;
-  // 增加自定义属性
-  // static get properties() {
-  //   return { test: { type: String } };
-  // }
 
   static get styles() {
     return [btn_style.default];
@@ -40,6 +36,7 @@ export class WxButton extends LitElement {
   constructor() {
     super();
   }
+
   render() {
     let result;
     let _loading = this.loading
@@ -49,19 +46,25 @@ export class WxButton extends LitElement {
       : "";
     let button = this.disabled
       ? html`
-          <button class="btn" name="btn" disabled="${this.disabled}"></button>
+          <button
+            class="btn"
+            id="btn"
+            name="btn"
+            disabled="${this.disabled}"
+          ></button>
         `
       : html`
-          <button class="btn" name="btn"></button>
+          <button class="btn" id="btn" name="btn"></button>
         `;
     if (this.href) {
       result = html`
         <a
+          id="btn"
+          class="btn"
+          name="btn"
           href="${this.href}"
           target="${this.target}"
           rel="${this.rel}"
-          class="btn"
-          name="btn"
           download="${this.download}"
         ></a>
       `;
@@ -82,6 +85,11 @@ export class WxButton extends LitElement {
     return result;
   }
 
+  focus() {
+    const btn = this.shadowRoot.querySelector(".btn") as HTMLElement;
+    btn.focus();
+  }
+
   firstUpdated() {
     this.addEventListener("click", () => {
       if (this.toggle) {
@@ -92,6 +100,9 @@ export class WxButton extends LitElement {
           this.removeAttribute("checked");
         }
       }
+    });
+    this.addEventListener("keydown", e => {
+      if (e.keyCode === 13) e.stopPropagation();
     });
   }
 
@@ -107,16 +118,9 @@ export class WxButton extends LitElement {
     };
   }
   // attributeChangedCallback(name, oldValue, newValue) {
-  //   if (name === "disabled" && this) {
-  //     if (!this.getAttribute("disabled") && newValue !== (null || "")) {
-  //       this.setAttribute(newValue, newValue);
-  //       if (this.href) {
-  //         this.removeAttribute("href");
-  //       }
-  //     } else {
-  //       this.removeAttribute(newValue);
-  //     }
-  //   }
+  // if(oldValue!==newValue){
+
+  // }
   // }
 }
 // 注意这里需要判断下，不然浏览器会报：Failed to execute 'define' on 'CustomElementRegistry': this name has already been used with this registry
