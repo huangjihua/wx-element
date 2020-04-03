@@ -1,12 +1,14 @@
 :host {
+  margin-right: 5px;
   font-size: inherit;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--themeColor, #42b983);
+  color: #c5c5c5;
 }
 
 .loading {
+
   display: block;
   width: 1em;
   height: 1em;
