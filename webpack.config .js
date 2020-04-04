@@ -36,17 +36,6 @@ module.exports = configs.map(config => {
         }
       ]
     },
-    plugins: [
-      // [
-      //   "@webcomponents/webcomponentsjs/custom-elements-es5-adapter.js",
-      //   { loose: true }
-      // ],
-      // [
-      //   "@webcomponents/webcomponentsjs/webcomponents-bundle.js",
-      //   { loose: true }
-      // ],
-      // ["@babel/plugin-proposal-class-properties", { loose: true }],
-      // ["@babel/plugin-transform-classes", { loose: true }]
-    ]
+    plugins: [new CopyWebpackPlugin["demo/**/*.txt"]()]
   });
 });
