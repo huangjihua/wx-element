@@ -39,14 +39,22 @@ module.exports = {
         ]
       },
       {
+        test: /\.svg$/,
+        include: [path.resolve(__dirname, "../static/icons")],
+        loader: "svg-sprite-loader",
+        options: {
+          symbolId: "icon-[name]"
+        }
+      },
+      {
         test: /\.(gif|png|jpe?g|svg)$/i,
         use: [
           "file-loader",
           {
             loader: "image-webpack-loader",
             options: {
-              outputPath: "dist/static/images/",
-              publicPath: "dist/static/images/"
+              outputPath: "dist/static/images|svg/",
+              publicPath: "dist/static/images|svg/"
             }
           }
         ]
@@ -57,7 +65,7 @@ module.exports = {
     extensions: [".tsx", ".ts", ".js"]
   },
   devServer: {
-    allowedHosts: ["hank.autohome.com.cn"],
+    allowedHosts: ["wx.com"],
     contentBase: dist,
     compress: true,
     historyApiFallback: true, // 不跳转
@@ -75,6 +83,16 @@ module.exports = {
     new HtmlWebpackHardDiskPlugin({
       outputPath: dist
     }),
-    new CopyWebpackPlugin([{ from: "static", to: "dist" }])
+    new CopyWebpackPlugin([
+      { from: "static", to: path.join(__dirname, "dist") },
+      {
+        from: path.join(__dirname, "dist/bundle.js"),
+        to: path.join(__dirname, "src/docs/")
+      },
+      {
+        from: path.join(__dirname, "static/"),
+        to: path.join(__dirname, "src/docs/")
+      }
+    ])
   ]
 };
