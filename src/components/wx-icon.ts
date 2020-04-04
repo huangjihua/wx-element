@@ -47,7 +47,6 @@ export class WxIcon extends LitElement {
   // 自定义元素 首次被插入文档DOM时，调用
   connectedCallback() {
     super.connectedCallback();
-    console.log("connected");
   }
   // 自定义元素 增加、删除、修改自身属性时，被调用。
   attributeChangedCallback(name, oldVal, newVal) {
