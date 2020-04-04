@@ -1,13 +1,28 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
-    // "noImplicitAny": true,
-    "module": "commonjs",
-    "target": "es6", // es5有点问题
-    "sourceMap": true,
+    "outDir": "./dist/", // 打包到的目录
+    "sourceMap": true, // 是否生成sourceMap（用于浏览器调试）
+    "noUnusedLocals": true, // 若有未使用的局部变量则抛错
+    "noUnusedParameters": true, // 若有未使用的参数则抛错
+    "preserveConstEnums": true,
+    // "declaration": true, // 是否生成声明文件
+    // "declarationDir": "./dist/types/", // 声明文件打包的位置
+    // "declarationMap": true, // 是否生成声明文件map文件（便于调试）
     "experimentalDecorators": true,
-    "moduleResolution": "node"
+    "importHelpers": true, // 减少代码冗余
+    "module": "commonjs", // 指定生成哪个模块系统代码 commonjs
+    "target": "es6", // es5有点问题(Class constructor LitElement cannot be invoked without 'new') ，选用 es6
+    "moduleResolution": "node",
+    "strictNullChecks": false, // 在严格的null检查模式下，null和undefined值不包含在任何类型里，只允许用它们自己和any来赋值（有个例外，undefined可以赋值到void）
+    // "isolatedModules": true, // 将每个文件做为单独的模块 （与 'ts.transpileModule' 类似）.
+    "types": [ // 指定了types，只有被列出来的包才会被包含进来
+      "node",
+    ],
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "lib": ["dom", "es5", "es6", "es2017", "es2015.promise", "ESNext"],
   },
-  "lib": ["es2015", "es2016", "esnext"],
-  "exclude": ["node_modules"]
+
+  "exclude": ["node_modules", "dist"] // 不编译这些目录里的文件
 }

@@ -1,7 +1,7 @@
 import { LitElement, property, html } from "lit-element";
 const style = require("./scss/wx-loading.scss");
 
-export class AtLoading extends LitElement {
+export class WxLoading extends LitElement {
   @property({ type: Number }) size = 0;
   @property({ type: String }) color = "";
 
@@ -15,7 +15,7 @@ export class AtLoading extends LitElement {
 
   render() {
     let _color = this.color ? `color:${this.color};` : "";
-    let _size = this.size > 0 ? `font-size:${this.size}px;` : 0;
+    let _size = this.size > 0 ? `font-size:${this.size}px;` : "";
     return html`
       <svg
         class="loading"
@@ -38,5 +38,5 @@ export class AtLoading extends LitElement {
 }
 
 if (!customElements.get("wx-loading")) {
-  customElements.define("wx-loading", AtLoading);
+  customElements.define("wx-loading", WxLoading);
 }
