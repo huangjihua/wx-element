@@ -2,7 +2,7 @@
 
 `wx-element`基于`LitElement`基类组件开发的原生跨框架的自定义 UI 组件库。[查看文档](https://github.com/huangjihua/wx-element/src/docs)
 
-[`LitElement`](https://lit-element.polymer-project.org/)遵循 Web 组件标准，兼容性良好，可在所有主流浏览器（Chrome，Firefox，IE，Edge，Safari 和 Opera）中使用.
+[`LitElement`](https://lit-element.polymer-project.org/) 主要的特性包括 `WebComponent` 生命周期模型支持和单向的数据绑定模型。它遵守 `WebComponents` 标准，使用 `lit-html` 模块这个快速的 `HTML` 渲染引擎定义和渲染 `HTML` 模板。最重要的是它对浏览器兼容性非常好,可在所有主流浏览器（Chrome，Firefox，IE，Edge，Safari 和 Opera）中使用.
 
 [github 项目地址](https://github.com/huangjihua/wx-element)
 
