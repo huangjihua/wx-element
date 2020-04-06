@@ -1,4 +1,4 @@
-import { LitElement, property } from "lit-element";
+import { LitElement, property, html } from "lit-element";
 const style = require("./scss/wx-icon.scss");
 
 export class WxIcon extends LitElement {
@@ -24,26 +24,15 @@ export class WxIcon extends LitElement {
   }
 
   // SVG 采用render渲染connectedCallback阶段无法获取到use/path
-  // render() {
-  //   const child = this.path
-  //     ? html`
-  //         <path></path>
-  //       `
-  //     : html`
-  //         <use></use>
-  //       `;
-
-  //   const svg = html`
-  //     <svg
-  //       class="icon"
-  //       aria-hidden="true"
-  //       viewBox="0 0 ${this.view} ${this.view}"
-  //     >
-  //       ${child}
-  //     </svg>
-  //   `;
-  //   return svg;
-  // }
+  render() {
+    return html`
+      <svg
+        class="icon"
+        aria-hidden="true"
+        viewBox="0 0 ${this.view} ${this.view}"
+      ></svg>
+    `;
+  }
   // 自定义元素 首次被插入文档DOM时，调用
   connectedCallback() {
     super.connectedCallback();
@@ -51,22 +40,8 @@ export class WxIcon extends LitElement {
   // 自定义元素 增加、删除、修改自身属性时，被调用。
   attributeChangedCallback(name, oldVal, newVal) {
     super.attributeChangedCallback(name, oldVal, newVal);
+    console.log("attribute change: ", name, newVal);
     switch (name) {
-      case "name":
-        this.shadowRoot
-          .querySelector("use")
-          .setAttributeNS(
-            "http://www.w3.org/1999/xlink",
-            "xlink:href",
-            `../icons/icon.svg#icon-${newVal}`
-          );
-        break;
-      case "path":
-        if (newVal) {
-          this.shadowRoot.innerHTML = `<svg class="icon" aria-hidden="true" viewBox="0 0 ${this.view} ${this.view}"><path></path></svg`;
-          this.shadowRoot.querySelector("path").setAttribute("d", newVal);
-        }
-        break;
       case "color":
         this.style.color = newVal;
         break;
@@ -75,6 +50,16 @@ export class WxIcon extends LitElement {
         break;
       default:
         break;
+    }
+  }
+
+  updated() {
+    console.log("updated");
+    const iconSvg = this.shadowRoot.querySelector(".icon") as HTMLElement;
+    if (this.name) {
+      iconSvg.innerHTML = `<use xlink:href="../icons/icon.svg#icon-${this.name}"></use>`;
+    } else if (this.path) {
+      iconSvg.innerHTML = `<path d="${this.path}"> </path>`;
     }
   }
 }
