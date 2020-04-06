@@ -7,7 +7,7 @@
 ```html
 <!-- 独立引入 -->
 <script type="module">
-  import WxMessage from "./node_modules/wx-ui/components/wx-message.js";
+  import WxMessage from "./node_modules/wx-element/components/wx-message.js";
   window.WxMessage = WxMessage;
   WxMessage.show({ type: "info", text: "message info" });
 </script>
@@ -17,9 +17,9 @@
 
 > 如果是全部引用则没有这个问题，已经默认挂载在`window`对象上了
 
-## WxMessage[level]
+## WxMessage.show[level]
 
-和一般组件不太一样的一个地方是，该组件更类似于一个`API`，这里提供了`WxMessage`的一个静态方法。
+该组件是通过一个`show`静态方法调用即可应用`WxMessage`，根据传入参数`type`值的不同提供不同的类似`API`的应用，`type`值分为：`success | error | warning | loading |info`
 
 ```ts
 WxMessage.show({
@@ -34,10 +34,10 @@ WxMessage.show({
 所有方法返回均为`<wx-message></wx-message>`对象。
 
 <wx-button type="primary" onclick="WxMessage.show({type:'info',text:'This a info message'})">info</wx-button>
-<wx-button type="primary" onclick="WxMessage.show(type:'success',text:'This a success message')">success</wx-button>
-<wx-button type="primary" onclick="WxMessage.show(type:'error', text:'This a error message')">error</wx-button>
-<wx-button type="primary" onclick="WxMessage.show(type:'warning',text:'This a warning message')">warning</wx-button>
-<wx-button type="primary" onclick="WxMessage.show(type:'loading',text:'This a loading message')">loading</wx-button>
+<wx-button type="primary" onclick="WxMessage.show({type:'success',text:'This a success message'})">success</wx-button>
+<wx-button type="primary" onclick="WxMessage.show({type:'error', text:'This a error message'})">error</wx-button>
+<wx-button type="primary" onclick="WxMessage.show({type:'warning',text:'This a warning message'})">warning</wx-button>
+<wx-button type="primary" onclick="WxMessage.show({type:'loading',text:'This a loading message'})">loading</wx-button>
 
 | 参数       | 说明                                            | 类型       | 默认值 |
 | ---------- | ----------------------------------------------- | ---------- | ------ |
@@ -74,7 +74,7 @@ messageEle.onclose = function() {
 };
 ```
 
-## WxMessage.show
+## WxMessage.show[custom icon]
 
 `WxMessage.show`是一个更为通用的方法，可以自定义`icon`。
 

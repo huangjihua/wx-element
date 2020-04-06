@@ -35,14 +35,14 @@
 
 当设置`href`属性时，`wx-button`内部会渲染成`a`标签。
 
-<wx-button type="primary" href="https://github.com/huangjihua/wx-element">visit wx-element</wx-button>
-<wx-button type="dashed" href="https://github.com/huangjihua/wx-element">visit wx-element</wx-button>
-<wx-button type="flat" href="https://github.com/huangjihua/wx-element">visit wx-element</wx-button>
-<wx-button href="https://github.com/huangjihua/wx-element">visit wx-element</wx-button>
+<wx-button type="primary" href="https://github.com/huangjihua/wx-element">link a element</wx-button>
+<wx-button type="dashed" href="https://github.com/huangjihua/wx-element">link a element</wx-button>
+<wx-button type="flat" href="https://github.com/huangjihua/wx-element">link a element</wx-button>
+<wx-button href="https://github.com/huangjihua/wx-element">link a element</wx-button>
 
 ```html
 <wx-button href="https://github.com/huangjihua/wx-element"
-  >visit wx-element</wx-button
+  >link a element</wx-button
 >
 ```
 
@@ -104,60 +104,60 @@ com.setAttribute("props", newProps);
 com.removeAttribute("props");
 ```
 
-## 按钮组`wx-button-group`
+## 按钮组`wx-group`
 
 `<wx-button-group>`可以将一组同类型的按钮组合起来。
 
-<wx-button-group>
+<wx-group>
     <wx-button>button1</wx-button>
     <wx-button>button2</wx-button>
     <wx-button>button3</wx-button>
     <wx-button>button4</wx-button>
-</wx-button-group>
+</wx-group>
 
 <p></p>
 
-<wx-button-group>
+<wx-group>
     <wx-button type="primary">button1</wx-button>
     <wx-button type="primary">button2</wx-button>
     <wx-button type="primary">button3</wx-button>
     <wx-button type="primary">button4</wx-button>
-</wx-button-group>
+</wx-group>
 
 <p></p>
 
-<wx-button-group>
+<wx-group>
     <wx-button type="dashed">button1</wx-button>
     <wx-button type="dashed">button2</wx-button>
     <wx-button type="dashed">button3</wx-button>
     <wx-button type="dashed">button4</wx-button>
-</wx-button-group>
+</wx-group>
 
 <p></p>
 
-<wx-button-group>
+<wx-group>
     <wx-button type="flat">button1</wx-button>
     <wx-button type="flat">button2</wx-button>
     <wx-button type="flat">button3</wx-button>
     <wx-button type="flat">button4</wx-button>
-</wx-button-group>
+</wx-group>
 
 <p></p>
 
-<wx-button-group>
+<wx-group>
     <wx-button type="primary">button1</wx-button>
     <wx-button type="primary">button2</wx-button>
     <wx-button>button3</wx-button>
     <wx-button>button4</wx-button>
-</wx-button-group>
+</wx-group>
 
 ```html
-<wx-button-group>
+<wx-group>
   <wx-button>button1</wx-button>
   <wx-button>button2</wx-button>
   <wx-button>button3</wx-button>
   <wx-button>button4</wx-button>
-</wx-button-group>
+</wx-group>
 ```
 
 ## 状态切换`toggle`
