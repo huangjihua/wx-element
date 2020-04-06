@@ -40,7 +40,7 @@ export class WxIcon extends LitElement {
   // 自定义元素 增加、删除、修改自身属性时，被调用。
   attributeChangedCallback(name, oldVal, newVal) {
     super.attributeChangedCallback(name, oldVal, newVal);
-    console.log("attribute change: ", name, newVal);
+    // console.log("attribute change: ", name, newVal);
     switch (name) {
       case "color":
         this.style.color = newVal;
