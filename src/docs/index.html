@@ -10,40 +10,64 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
   <link rel="stylesheet" href="//unpkg.com/gitalk/dist/gitalk.css">
+  <style>
+    :root {
+      --themeColor: #05f;
+      /*--themeBackground:linear-gradient(to right, #42b983 0%,#06b2a1 100%)*/
+    }
+
+    .sidebar ul li.active>a,
+    .markdown-section a,
+    .token.attr-value,
+    .token.control,
+    .token.directive,
+    .token.unit,
+    .token.string {
+      color: var(--themeColor);
+    }
+
+    .github-corner svg {
+      fill: var(--themeColor);
+    }
+
+    .markdown-section blockquote {
+      border-left: 4px solid var(--theme-color);
+    }
+  </style>
 </head>
 
 <body>
   <div id="app"></div>
   <script>
     window.$docsify = {
-      loadSidebar: true,
       loadSidebar: '_sidebar.md',
+      subMaxLevel: 2,
+      auto2top: true,
       name: 'wx-element',
       repo: 'https://github.com/huangjihua/wx-element',
-      auto2top: true,
     }
   </script>
+
   <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   <script src="//unpkg.com/docsify-copy-code"></script>
-  <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
   <script src="//unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/gitalk.min.js"></script>
   <script>
     const gitalk = new Gitalk({
       clientID: 'de98aa2598238c9642f5',
       clientSecret: '4186493e791efbf12401f7321969f2ed15f11aac',
-      repo: 'docsify-starter',
-      owner: 'swimly',
-      admin: ['swimly'],
+      repo: 'wx-element',
+      owner: 'huangjihua',
+      admin: ['huangjihua'],
+      title: location.hash == '' ? '/README' : location.hash.match(/#(.*?)([?]|$)/)[1],
+      id: location.hash == '' ? '/README' : location.hash.match(/#(.*?)([?]|$)/)[1],
       // facebook-like distraction free mode
-      distractionFreeMode: true
+      distractionFreeMode: false
     })
+
   </script>
-  <script type="text/javascript" src="./bundle.js"></script>
-  <script type="module" src="./bundle.js"></script>
-  <!-- <script type="module" defer>
-    import '../index.ts';
-  </script> -->
+  <script type="text/javascript" src="http://wx.com:3001/bundle.js"></script>
 </body>
 
 </html>

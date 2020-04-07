@@ -4,3 +4,6 @@
 - **Component**
   - [button](wx-button.md)
   - [icon](wx-icon.md)
+  - [group](wx-group.md)
+  - [switch](wx-switch.md)
+  - [message](wx-message.md)
